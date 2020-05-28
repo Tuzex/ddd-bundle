@@ -1,0 +1,18 @@
+language: php
+php: 7.4
+
+branches:
+  only:
+    - master
+
+install:
+  - composer install
+
+scripts:
+  - composer check
+  - composer test
+  - composer cs
+
+notifications:
+  email:
+    on_success: never
