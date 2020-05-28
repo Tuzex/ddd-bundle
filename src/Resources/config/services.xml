@@ -6,5 +6,7 @@
 
     <services>
         <defaults autowire="true" autoconfigure="true" public="false"/>
+
+        <service id="Tuzex\Domain\Service\DomainEventsPropagator" class="Tuzex\Domain\Service\StaticDomainEventsPropagator"/>
     </services>
 </container>
