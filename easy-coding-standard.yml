@@ -1,0 +1,9 @@
+parameters:
+  sets:
+    - 'clean-code'
+    - 'dead-code'
+    - 'php71'
+    - 'psr12'
+    - 'types'
+    - 'symfony'
+
