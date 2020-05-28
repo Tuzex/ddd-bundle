@@ -1,4 +1,5 @@
 # Tuzex / domain-bundle
+[![Build Status](https://travis-ci.org/Tuzex/domain-bundle.svg?branch=master)](https://travis-ci.org/github/Tuzex/domain-bundle)
 
 ...
 
