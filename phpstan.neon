@@ -1,5 +1,11 @@
 parameters:
-  autoload_files:
-    - %rootDir%/../../../vendor/autoload.php
+  level: 8
+  paths:
+    - src
+    - tests
 
   checkMissingIterableValueType: false
+
+includes:
+  - vendor/phpstan/phpstan-phpunit/extension.neon
+  - vendor/phpstan/phpstan-phpunit/rules.neon

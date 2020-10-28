@@ -29,8 +29,8 @@
   },
   "require-dev": {
     "phpstan/phpstan": "0.12.*",
-    "symplify/easy-coding-standard": "7.3.*"
+    "phpstan/phpstan-phpunit": "0.12.*",
     "phpunit/phpunit": "9.4.*",
-  "scripts": {
+    "symplify/easy-coding-standard": "8.3.*"
   }
 }
