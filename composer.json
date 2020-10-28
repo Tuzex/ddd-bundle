@@ -14,15 +14,13 @@
   },
   "autoload": {
     "psr-4": {
-      "Tuzex\\Bundle\\Domain\\": "src/"
+      "Tuzex\\Bundle\\Ddd\\": "src/"
     }
   },
   "require": {
-    "php": "7.4.*",
-    "symfony/framework-bundle": "4.3.*|4.4.*|5.0.*",
-    "symfony/messenger": "4.3.*|4.4.*|5.0.*",
-    "tuzex/domain": "0.5.*",
-    "tuzex/domain-event-messenger-bundle": "0.1.*"
+    "php": "^7.4",
+    "symfony/framework-bundle": "4.3.*|4.4.*|5.*",
+    "tuzex/ddd": "1.0.*"
   },
   "require-dev": {
     "phpstan/phpstan": "0.12.*",

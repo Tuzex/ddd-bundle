@@ -5,8 +5,14 @@
            xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <services>
-        <defaults autowire="true" autoconfigure="true" public="false"/>
+        <defaults autowire="true" autoconfigure="true" public="false" />
 
-        <service id="Tuzex\Domain\Service\DomainEventsPropagator" class="Tuzex\Domain\Service\StaticDomainEventsPropagator"/>
+        <service id="Tuzex\Ddd\Infrastructure\Domain\DomainEventDispatcher" alias="Tuzex\Ddd\Infrastructure\Messaging\Messenger\MessengerDomainEventDispatcher"/>
+        <service id="Tuzex\Ddd\Infrastructure\Messaging\Messenger\MessengerDomainEventDispatcher">
+            <argument type="service" id="tuzex.domain.event_bus"/>
+        </service>
+
+        <service id="Tuzex\Ddd\Domain\Service\DomainEventsPropagator" alias="Tuzex\Ddd\Infrastructure\Domain\Service\StaticDomainEventsPropagator"/>
+        <service id="Tuzex\Ddd\Infrastructure\Domain\Service\StaticDomainEventsPropagator"/>
     </services>
 </container>
