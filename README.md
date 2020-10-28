@@ -1,13 +1,13 @@
-# Tuzex / domain-bundle
-[![Build Status](https://travis-ci.org/Tuzex/domain-bundle.svg?branch=master)](https://travis-ci.org/github/Tuzex/domain-bundle)
+# Tuzex / ddd-bundle
 
-...
+Integration of DDD (Domain Driven Design) library to Symfony 4.3 and higher.
 
 Installation
 ------------
 
-The best way to install Tuzex/domain-bundle is using the [Composer](http://getcomposer.org/):
+The best way to install Tuzex/ddd-bundle is using the [Composer](http://getcomposer.org/):
 
 ```sh
-$ composer require tuzex/domain-bundle
+$ composer require tuzex/ddd-bundle
 ```
+

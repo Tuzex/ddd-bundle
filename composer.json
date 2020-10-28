@@ -1,6 +1,6 @@
 {
-  "name": "tuzex/domain-bundle",
-  "description": "...",
+  "name": "tuzex/ddd-bundle",
+  "description": "Integration of DDD (Domain Driven Design) library to Symfony 4.3 and higher",
   "type": "symfony-bundle",
   "license": "MIT",
   "authors": [
