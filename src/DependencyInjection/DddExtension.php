@@ -10,7 +10,7 @@ use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Extension\Extension;
 use Symfony\Component\DependencyInjection\Extension\PrependExtensionInterface;
 use Symfony\Component\DependencyInjection\Loader\XmlFileLoader;
-use Tuzex\Ddd\Infrastructure\Domain\DomainEventHandler;
+use Tuzex\Ddd\Application\Service\DomainEvent\DomainEventHandler;
 
 final class DddExtension extends Extension implements PrependExtensionInterface
 {
@@ -28,17 +28,19 @@ final class DddExtension extends Extension implements PrependExtensionInterface
 
         $containerBuilder->prependExtensionConfig('framework', [
             'messenger' => [
-                'default_bus' => $configs['messenger']['default_bus'] ?? 'tuzex.domain.event_bus',
+                'default_bus' => $configs['messenger']['default_bus'] ?? 'tuzex.ddd.domain_event_bus',
                 'buses' => [
-                    'tuzex.domain.event_bus' => [],
+                    'tuzex.ddd.domain_event_bus' => [
+                        'default_middleware' => 'allow_no_handlers',
+                    ],
                 ],
             ],
         ]);
 
         $containerBuilder->registerForAutoconfiguration(DomainEventHandler::class)
-            ->addTag('tuzex.domain.event_handler')
+            ->addTag('tuzex.ddd.domain_event_handler')
             ->addTag('messenger.message_handler', [
-                'bus' => 'tuzex.domain.event_bus',
+                'bus' => 'tuzex.ddd.domain_event_bus',
             ]);
     }
 

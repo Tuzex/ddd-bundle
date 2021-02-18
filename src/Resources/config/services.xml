@@ -7,12 +7,12 @@
     <services>
         <defaults autowire="true" autoconfigure="true" public="false" />
 
-        <service id="Tuzex\Ddd\Infrastructure\Domain\DomainEventDispatcher" alias="Tuzex\Ddd\Infrastructure\Messaging\Messenger\MessengerDomainEventDispatcher"/>
-        <service id="Tuzex\Ddd\Infrastructure\Messaging\Messenger\MessengerDomainEventDispatcher">
-            <argument type="service" id="tuzex.domain.event_bus"/>
+        <service id="Tuzex\Ddd\Application\DomainEventBus" alias="Tuzex\Ddd\Infrastructure\Application\MessengerDomainEventBus"/>
+        <service id="Tuzex\Ddd\Infrastructure\Application\MessengerDomainEventBus">
+            <argument type="service" id="tuzex.ddd.domain_event_bus"/>
         </service>
 
-        <service id="Tuzex\Ddd\Domain\Service\DomainEventsPropagator" alias="Tuzex\Ddd\Infrastructure\Domain\Service\StaticDomainEventsPropagator"/>
-        <service id="Tuzex\Ddd\Infrastructure\Domain\Service\StaticDomainEventsPropagator"/>
+        <service id="Tuzex\Ddd\Application\DomainEventsPropagator" alias="Tuzex\Ddd\Application\StaticDomainEventsPropagator"/>
+        <service id="Tuzex\Ddd\Application\StaticDomainEventsPropagator"/>
     </services>
 </container>
