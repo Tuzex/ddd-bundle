@@ -8,9 +8,9 @@ use PHPUnit\Framework\TestCase;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Tuzex\Bundle\Ddd\DependencyInjection\DddExtension;
 use Tuzex\Ddd\Application\DomainEventBus;
-use Tuzex\Ddd\Application\DomainEventsPropagator;
+use Tuzex\Ddd\Application\DomainEventsEmitter;
 use Tuzex\Ddd\Application\Service\DomainEvent\DomainEventHandler;
-use Tuzex\Ddd\Application\StaticDomainEventsPropagator;
+use Tuzex\Ddd\Infrastructure\Application\MemoryDomainEventsEmitter;
 use Tuzex\Ddd\Infrastructure\Application\MessengerDomainEventBus;
 
 final class DddExtensionTest extends TestCase
@@ -111,8 +111,8 @@ final class DddExtensionTest extends TestCase
             'domain-event-bus' => [
                 'serviceId' => MessengerDomainEventBus::class,
             ],
-            'domain-events-propagator' => [
-                'serviceId' => StaticDomainEventsPropagator::class,
+            'domain-events-emitter' => [
+                'serviceId' => MemoryDomainEventsEmitter::class,
             ],
         ];
     }
@@ -131,7 +131,7 @@ final class DddExtensionTest extends TestCase
     {
         $serviceAliases = [
             DomainEventBus::class => MessengerDomainEventBus::class,
-            DomainEventsPropagator::class => StaticDomainEventsPropagator::class,
+            DomainEventsEmitter::class => MemoryDomainEventsEmitter::class,
         ];
 
         foreach ($serviceAliases as $serviceAlias => $serviceId) {

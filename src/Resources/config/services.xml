@@ -12,7 +12,7 @@
             <argument type="service" id="tuzex.ddd.domain_event_bus"/>
         </service>
 
-        <service id="Tuzex\Ddd\Application\DomainEventsPropagator" alias="Tuzex\Ddd\Application\StaticDomainEventsPropagator"/>
-        <service id="Tuzex\Ddd\Application\StaticDomainEventsPropagator"/>
+        <service id="Tuzex\Ddd\Application\DomainEventsEmitter" alias="Tuzex\Ddd\Infrastructure\Application\MemoryDomainEventsEmitter"/>
+        <service id="Tuzex\Ddd\Infrastructure\Application\MemoryDomainEventsEmitter"/>
     </services>
 </container>

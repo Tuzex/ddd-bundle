@@ -9,6 +9,7 @@
       "email": "iam@edobarnas.com"
     }
   ],
+  "minimum-stability": "dev",
   "config": {
     "sort-packages": true
   },
@@ -25,12 +26,12 @@
   "require": {
     "php": "8.*",
     "symfony/framework-bundle": "4.3.*|4.4.*|5.*",
-    "tuzex/ddd": "0.1.*"
+    "tuzex/ddd": "0.2.*"
   },
   "require-dev": {
     "phpstan/phpstan": "0.12.*",
     "phpstan/phpstan-phpunit": "0.12.*",
     "phpunit/phpunit": "9.5.*",
-    "symplify/easy-coding-standard": "9.2.*"
+    "symplify/easy-coding-standard": "9.2.14"
   }
 }
